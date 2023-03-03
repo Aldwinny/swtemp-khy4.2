@@ -1,13 +1,75 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shantell+Sans:wght@500&family=Tilt+Neon&family=Poppins:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::selection {
+  @apply bg-black text-white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-poppins;
+  margin: 0;
+}
+
+nav li {
+  @apply tablet:text-xl text-xs font-bold duration-75 rounded-lg;
+}
+
+nav .active {
+  @apply border-b-4 border-solid border-b-black rounded-none;
+}
+
+nav li:not(.logo) {
+  @apply tablet:mx-4 tablet:px-3 mx-3;
+}
+
+nav li:not(.logo):hover {
+  @apply border-b-4 border-sky-500 rounded-none;
+}
+
+form input {
+  @apply px-4 h-14 text-sm w-full rounded-md outline-none;
+  border: 1px solid #bca7e8;
+}
+
+form h1 {
+  @apply text-2xl font-bold mb-4;
+  color: #528aae;
+}
+
+form .error-text {
+  @apply text-red-600 text-xs mt-2;
+}
+
+.btn-group input {
+  @apply text-base font-bold cursor-pointer duration-300 w-36;
+  color: #528aae;
+  background-color: #ffc1cc;
+}
+
+.btn-group input:hover {
+  background-color: #ff9999;
+}
+
+.form-wrapper {
+  background: rgba(225, 218, 218, 0.769);
+  max-width: 370px;
+}
+
+.logo {
+  @apply font-shantell whitespace-nowrap;
+}
+
+.logo-star {
+  @apply tablet:text-sm;
+}
+
+.robot-size {
+  @apply max-h-52 phone:max-h-52 tablet:max-h-96;
 }
